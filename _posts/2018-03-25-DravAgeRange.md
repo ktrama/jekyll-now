@@ -65,6 +65,19 @@ Therefore, I will use three topological  constraints and three calibration dates
 ## MCMC Analysis
 I will use [MrBayes](https://arxiv.org/abs/1603.05707) that is available [here](https://github.com/PhyloStar/mrbayes-coal/tree/master/mrbayes-3.2.6). I ran MrBayes for three different tree priors with all the other parameter settings kept invariant. I ran the software for two independent runs with each run consisting of a cold chain and three hot chains which allow the cold chain to explore the tree landscape that might consist of multiple peaks. I ran the chain for 5 million states in the case of coalescent prior and ten million states in the case of birth-death and uniform tree priors and sampled every five hundredth state.  Both the independent runs showed an average standard deviation of split frequencies less than 0.01 in all the cases. I threw away initial 25% of the states as part of burn-in. Then, I summarized the trees using majority consensus method. For relaxed clock settings, I use a Independent Gamma rates model where each branch rate is sampled from a  Gamma distribution.
 
+ 
+### Birth-Death tree
+[BirthDeathConsensusTree](https://github.com/PhyloStar/dravidian-dating/blob/master/mpi_20_langs/dravBirthdeath.con.tre.png)
+
+### Uniform tree
+
+[UniformConsensusTree](https://github.com/PhyloStar/dravidian-dating/blob/master/mpi_20_langs/dravUniform.con.tre.png)
+
+### Coalescent tree
+
+[CoalescentConsensusTree](https://github.com/PhyloStar/dravidian-dating/blob/master/mpi_20_langs/dravCoal.con.tre.png)
+
+
 ## Results
 The consensus trees are shown below for each tree prior. The root age is 3864 years that is below 4000 years in the case of Birth-death tree. In the case of uniform tree, the root age is about 4618 years. Finally, the coalescent prior shows a root age that is 5000 years. The root ages seem to fluctuate a lot between 3860 to 5000 years for a language family's sample that is small and has small number of cognate sets.
 
@@ -79,39 +92,6 @@ Coalescent|2821-7524|4964|8359.807
 
 The best tree prior can be determined by calculating [AICM](http://bedford.io/pdfs/papers/baele-path-sampling.pdf) (AIC through MCMC) for 100 bootstrap replicates on the posterior samples. The AICM values are given in table and are very close to each other. The best model is the coalescent tree prior that infers a date close to 5000 years.
 
-<table class="tg">
-  <tr>
-    <th class="tg-baqh" colspan="2">Some values</th>
-  </tr>
-  <tr>
-    <th class="tg-baqh">Material</th>
-    <th class="tg-baqh">Value</th>
-  </tr>
-  <tr>
-    <td class="tg-baqh">A</td>
-    <td class="tg-baqh">0.75</td>
-  </tr>
-  <tr>
-    <td class="tg-baqh">B</td>
-    <td class="tg-baqh">0.47</td>
-  </tr>
-  <tr>
-    <td class="tg-baqh">C</td>
-    <td class="tg-baqh">0.4 - 0.7</td>
-  </tr>
-  <tr>
-    <td class="tg-baqh">C</td>
-    <td class="tg-baqh">1.0 - 1.8</td>
-  </tr>
-  <tr>
-    <td class="tg-baqh">S</td>
-    <td class="tg-baqh">0.15 - 2.0</td>
-  </tr>
-  <tr>
-    <td class="tg-baqh">W</td>
-    <td class="tg-baqh">0.07 - 0.17</td>
-  </tr>
-</table>
 
 ## Conclusion about inferred phylogenies
 * All the tree priors infer quite similar tree topologies. This is not surprising due to the small number of languages and relatively less number of cognate sets when compared to families like Indo-European or Austronesian.
