@@ -66,6 +66,9 @@ Therefore, I will use three topological  constraints and three calibration dates
 I will use [MrBayes](https://arxiv.org/abs/1603.05707) that is available [here](https://github.com/PhyloStar/mrbayes-coal/tree/master/mrbayes-3.2.6). I ran MrBayes for three different tree priors with all the other parameter settings kept invariant. I ran the software for two independent runs with each run consisting of a cold chain and three hot chains which allow the cold chain to explore the tree landscape that might consist of multiple peaks. I ran the chain for 5 million states in the case of coalescent prior and ten million states in the case of birth-death and uniform tree priors and sampled every five hundredth state.  Both the independent runs showed an average standard deviation of split frequencies less than 0.01 in all the cases. I threw away initial 25% of the states as part of burn-in. Then, I summarized the trees using majority consensus method. For relaxed clock settings, I use a Independent Gamma rates model where each branch rate is sampled from a  Gamma distribution.
 
  
+## Results
+The consensus trees are shown below for each tree prior. The root age is 3864 years that is below 4000 years in the case of Birth-death tree. In the case of uniform tree, the root age is about 4618 years. Finally, the coalescent prior shows a root age that is 5000 years. The root ages seem to fluctuate a lot between 3860 to 5000 years for a language family's sample that is small and has small number of cognate sets.
+
 ### Birth-Death tree
 [BirthDeathConsensusTree](https://github.com/PhyloStar/dravidian-dating/blob/master/mpi_20_langs/dravBirthdeath.con.tre.png)
 
@@ -76,10 +79,6 @@ I will use [MrBayes](https://arxiv.org/abs/1603.05707) that is available [here](
 ### Coalescent tree
 
 [CoalescentConsensusTree](https://github.com/PhyloStar/dravidian-dating/blob/master/mpi_20_langs/dravCoal.con.tre.png)
-
-
-## Results
-The consensus trees are shown below for each tree prior. The root age is 3864 years that is below 4000 years in the case of Birth-death tree. In the case of uniform tree, the root age is about 4618 years. Finally, the coalescent prior shows a root age that is 5000 years. The root ages seem to fluctuate a lot between 3860 to 5000 years for a language family's sample that is small and has small number of cognate sets.
 
 ### HPD and Median ages
 I will now look at the highest posterior density ([HPD](http://beast.community/glossary.html)) ranges of root ages for each sampled tree. The HPD and median root ages from the sampled trees are presented below. The results show that even the sampled trees show quite different root ages.
