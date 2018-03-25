@@ -72,7 +72,7 @@ The consensus trees are shown below for each tree prior. The root age is 3864 ye
 I will now look at the highest posterior density ([HPD](http://beast.community/glossary.html)) ranges of root ages for each sampled tree. The HPD and median root ages from the sampled trees are presented below. The results show that even the sampled trees show quite different root ages.
 
 Tree Prior| HPD | Median Age | AICM
---------|--------|--------|--------
+-------------|-----------|-----------|-----------
 Birth Death|2445-5993|4042|8361.057
 Uniform|2723-7203|4573|8361.936
 Coalescent|2821-7524|4964|8359.807
