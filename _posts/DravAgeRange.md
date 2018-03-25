@@ -1,3 +1,10 @@
+---
+layout: post
+title: Is Dravidian 3800 or  4500 or 5000 years old?
+categories: Dravidian
+tags: [BI]
+---
+
 ## My findings
 In a recent [article](http://rsos.royalsocietypublishing.org/content/5/3/171504), Kolipakam et al. employed a Yule model (a birth-death model with no extinction) for lineage speciation and performed a Bayesian analysis which inferred that the Dravidian family's root age is 4500 years. The authors made the data available online. This allowed me to experiment if other tree priors infer similar dates. In fact, I find that the inferred root ages differ when I use different tree priors such as uniform prior, fixed population size coalescent prior or a more general birth-death prior. To determine the best tree prior I performed a model comparison using [AICM](http://bedford.io/pdfs/papers/baele-path-sampling.pdf) (Akaike Information Criterion through Monte Carlo Markov Chain). I find that the **best model is a coalescent prior that supports a root date that is 5000 years** and agrees quite well with Krishnamurti's estimate that Proto-Dravidian is about the early part of the third millenium. The uniform and birth-death priors support ages of 4600 and 3800 years respectively.
 
