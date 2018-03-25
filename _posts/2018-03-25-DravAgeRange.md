@@ -80,13 +80,13 @@ Coalescent|2821-7524|4964|**8359.807**
 The best tree prior can be determined by calculating [AICM](http://bedford.io/pdfs/papers/baele-path-sampling.pdf) (AIC through MCMC) for 100 bootstrap replicates on the posterior samples. The AICM values are given in table and are very close to each other. The best model is the coalescent tree prior that infers a date close to 5000 years.
  
 ### Birth-Death tree
-![Birth-Death consensus tree](https://github.com/PhyloStar/dravidian-dating/blob/master/mpi_20_langs/dravBirthdeath.con.tre.png)
+[Birth-Death consensus tree](https://github.com/PhyloStar/dravidian-dating/blob/master/mpi_20_langs/dravBirthdeath.con.tre.png)
 
 ### Uniform tree
-![Uniform consensus tree](https://github.com/PhyloStar/dravidian-dating/blob/master/mpi_20_langs/dravUniform.con.tre.png)
+[Uniform consensus tree](https://github.com/PhyloStar/dravidian-dating/blob/master/mpi_20_langs/dravUniform.con.tre.png)
 
 ### Coalescent tree
-![Coalescent consensus tree](https://github.com/PhyloStar/dravidian-dating/blob/master/mpi_20_langs/dravCoal.con.tre.png)
+[Coalescent consensus tree](https://github.com/PhyloStar/dravidian-dating/blob/master/mpi_20_langs/dravCoal.con.tre.png)
 
 ## Conclusion about inferred phylogenies
 * All the tree priors infer quite similar tree topologies. This is not surprising due to the small number of languages and relatively less number of cognate sets when compared to families like Indo-European or Austronesian.
