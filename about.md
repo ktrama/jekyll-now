@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I am a post-doctoral fellow at Department of Informatics, University of Oslo.
+Blogs on NLP, phylogenetics, (P/C)ython
 
 ### More Information
 
