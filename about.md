@@ -6,9 +6,6 @@ permalink: /about/
 
 Blogs on NLP, phylogenetics, (P/C)ython
 
-### More Information
-
-You can find more information about me [here](phylostar.github.io)
 
 ### Contact me
 
