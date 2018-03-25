@@ -79,6 +79,40 @@ Coalescent|2821-7524|4964|8359.807
 
 The best tree prior can be determined by calculating [AICM](http://bedford.io/pdfs/papers/baele-path-sampling.pdf) (AIC through MCMC) for 100 bootstrap replicates on the posterior samples. The AICM values are given in table and are very close to each other. The best model is the coalescent tree prior that infers a date close to 5000 years.
 
+<table class="tg">
+  <tr>
+    <th class="tg-baqh" colspan="2">Some values</th>
+  </tr>
+  <tr>
+    <th class="tg-baqh">Material</th>
+    <th class="tg-baqh">Value</th>
+  </tr>
+  <tr>
+    <td class="tg-baqh">A</td>
+    <td class="tg-baqh">0.75</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">B</td>
+    <td class="tg-baqh">0.47</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">C</td>
+    <td class="tg-baqh">0.4 - 0.7</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">C</td>
+    <td class="tg-baqh">1.0 - 1.8</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">S</td>
+    <td class="tg-baqh">0.15 - 2.0</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">W</td>
+    <td class="tg-baqh">0.07 - 0.17</td>
+  </tr>
+</table>
+
 ## Conclusion about inferred phylogenies
 * All the tree priors infer quite similar tree topologies. This is not surprising due to the small number of languages and relatively less number of cognate sets when compared to families like Indo-European or Austronesian.
 * I also attempted to check if any of the phylogenies showed agreeing dates for the three excluded calibration points. 
