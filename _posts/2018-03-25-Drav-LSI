@@ -1,0 +1,98 @@
+---
+layout: post
+title: Dating the Dravidian language family: A preliminary investigation
+categories: Dravidian
+tags: [BI]
+---
+
+In this blog, I will discuss my experience with dating the Dravidian language family. The Dravidian languages are spoken in South Asia and have at least 81 languages according to [Glottolog](http://glottolog.org/resource/languoid/id/drav1251). The main source of reference for Dravidian languages is from Krishnamurti (2003). The Dravidian language family is supposedly 3500 years old according to Krishnamurti. Unlike the Indo-European languages, the Dravidian language family does not have calibration points that go back to ancient languages such as Sanskrit, Latin, Ancient Greek, or Hittite. Alternatively, there is some information from Krishnamurti (2003; 502) that Tamil-Malayalam split happened about 700-1100 years B.P (Before present). We also have age information about the older stages of literary languages such as Tamil, Kannada, and Telugu but there is not much lexical information about these languages.
+
+Another issue is that the Dravidian languages do not have any multilingual lists that are published online. I will use the multilingual lists from the [Linguistic Survey of India](https://archive.org/details/in.ernet.dli.2015.101650) and assign cognate judgements based on the information from Krishnamurti (2003). The dataset has the following languages:
+* TODA
+* IRULA
+* KOTA
+* KODAGU
+* KOLAMI
+* GONDI
+* MALTO_OR_MALER
+* TULU
+* KURUX_OR_ORAO
+* TELUGU
+* KORAVA
+* KANARESE
+* BRAHUI
+* KUI_KANDHI_OR_KHOND
+* BADAGA
+* TAMIL
+* MALAYALAM
+
+The dataset has 168 meanings and out of that 99 meanings are not plurals, compounds, and phrases. So, I will use the 99 meanings for inferring the date of the Dravidian language family. For each meaning, I convert the cognate judgments into a binary matrix which has two states: `"0" and "1"`. If a language has a word in a cognate set it has a "1" **(presence)** state otherwise, it has "0" **(absence)** state. This step gives a binary matrix of dimensions: `18 X 578`. If a language has no word attested for a meaning, it is recorded as having "?" state in all the cognate sets for the meaning in that language. Once this step is done, we are ready to use [MrBayes](http://mrbayes.sourceforge.net/) to infer a phylogeny. This takes some steps and I will walk through the steps below.
+
+The following step will load the binary data matrix into MrBayes
+>exec drav_lsi.nex;
+
+We will add some constraints regarding the topology of the tree. This constraints will tell the software to put the languages together. For instance, Tamil-Malayalam are always together and this can be coded as:
+>constraint TamMal = 16-17;
+
+All the constraints look like followed:
+>     constraint root = 1-.;
+>     constraint TamMal = 16-17;
+>     constraint Telugu = 12-14;
+>     constraint north = 6-8;
+
+The constraints say that there is a Telugu subgroup with `Gondi-Kui-Telugu` as one group, Northern Subgroup with `Malto-Kurukh-Brahui` as another subgroup.
+
+MrBayes uses a birth-death tree prior that requires us to specify a prior on the range of the age of the root and the age of Tamil-Malayalam split. I will give a uniform prior on the age of the root which is `3500 - 35000`. I will follow Krishnamurti and give a uniform prior of `700 - 1100` for Tamil-Malayalam split. The commands for MrBayes will look as followed:
+`calibrate root = uniform(3500,35000) TamMal = uniform(700,1100);`
+
+MrBayes calculates the likelihood of the data to a proposed prior according to Felsenstein's Pruning algorithm. The pruning algorithm is an instance of [Variable Elimination](https://projecteuclid.org/download/pdfview_1/euclid.ss/1089808279) (Jordan 2004) on trees and can is used to perform the MCMC search using Metropolis-Hastings ratio as criteria to accept or reject a proposed tree. Aditionally, the MCMC algorithm also samples the Continuous Time Markov Chain parameters and the Gamma site rate parameters. This procedure is run for a very long time (ideally for few million iterations). Since, our dataset is small, we can run the chain for 500,000 states. 
+
+The Birth-Death process prior also introduces two other parameters: Base Clock Rate and Gamma rates for each branch in the tree. 
+1. The base clock rate is drawn from a Log-Normal distribution. 
+2. The branch rate for each branch is drawn from a Gamma distribution whose mean is 1.0 and the variance is inversely proportional to branch length. The branch length is calculated as the product of time and the base clock rate. Equivalently, the new branch length is drawn from a Gamma distribution whose mean is the old branch length and the variance is the product of old branch length and the variance prior `igrvarpr`.(More information about Birth-Death tree priors can be found [here](https://arxiv.org/pdf/1603.05707).
+
+Once we are done, we can run the analysis using MrBayes. If you are on Ubuntu: you can download and install MrBayes using apt as followed:
+
+`sudo apt install mrbayes`
+
+which will install the latest version of MrBayes on your machine.
+
+The birth-death tree prior also needs the number of languages that are sampled. In the Dravidian case there are about _22%_ of the languages out of the 81 languages and I will assign the sampling probability as followed:
+
+`prset sampleprob = 0.225;`
+
+Now, I can run the MCMC chain using the following sequence of commands:
+
+The first command tells the software to sample at every 500th state and run the analysis for 500000 states.
+>mcmcp ngen = 500000 samplefr=500;
+
+The second command tells the software to store the output in a file named `drav.birthdeath` which is printed to the screen at every 1000th state.
+>mcmcp filename = drav.birthdeath printfr = 1000 diagnfr = 5000;
+
+The below command will actually run the analysis.
+>mcmc;
+
+This process will generate a large number of files out of which we are interested in the files that end with `.p`. These files are used for diagnosing if the MCMC runs have converged. We can visualize the likelihood using [Tracer](http://tree.bio.ed.ac.uk/software/tracer/) and can see this below:
+
+![Log Likelihood](https://github.com/PhyloStar/dravidian-dating/blob/master/LL_trace.png)
+
+The tree from the above analysis can also be visualized using [FigTree](http://tree.bio.ed.ac.uk/software/figtree/) and is shown ![here](https://github.com/PhyloStar/dravidian-dating/blob/master/drav.birthdeath.con.tre.png)
+
+The tree shown above is the consensus tree formed from `1500` trees from the analysis. We threw away the initial `25%` of the trees as part of burn-in and plotted a summary tree using FigTree. The tree shows the median age of each node in number and the range of the age (called the 95% Highest Posterior Density or [Credibility Interval](https://en.wikipedia.org/wiki/Credible_interval) in Bayesian terminology).
+
+1. The median age of the root is 4000 years old.
+2. The Tamil-Malayalam split happened about 818 years ago.
+3. The Northern Dravidian split off about 2646 years ago. This date is close to what Krishnamurti estimates based on relative chronology that the Northern Dravidian speakers migrated about 3000-3300 BP.
+4. We only have 1 Central Dravidian language (Kolami) in our sample. Hence, we cannot comment about the split of Central Dravidian from Northern Dravidian.
+5. The split of South Dravidian into I and II subgroups occurred around 2127 years B.P which is not in agreement with Krishnamurti's estimate of 11th century BCE.
+6. The tree clearly shows the ternary structure posited by Krishnamurti that South, Central, and Northern branches split around at the same time.
+
+***
+## Shortcomings and issues
+* There is a need to sample more languages from Central Dravidian and South Dravidian II subgroup. This is simply due to the fact that the Central and South Dravidian II subgroups were described in detail in the second half of twentieth century whereas LSI is from the first half of the twentieth century.
+* As of now, the meanings come from Grierson's Linguistic Survey of India. Overall, the tree structure comes out well but the South Dravidian I languages are not grouped rightly. In fact, the placement of South-Dravidian I is not determined to the fullest satisfaction in Dravidian comparative linguistics. More languages have to be sampled to determine the relation between Nilgiri languages.
+
+## Future Work
+I am working on adding more languages and word lists and would be grateful to include any potential collaborators for providing any new word lists.
+
+The nexus file is available on the repository [as](https://github.com/PhyloStar/dravidian-dating/blob/master/drav_lsi.nex).
