@@ -5,7 +5,7 @@ categories: Dravidian
 tags: [BI]
 ---
 
-In a previous blog post [1](https://ktrama.github.io/DravAgeRange/) I experimented and found that there is not much signal in the lexical data to infer the right tree and that the root age keeps fluctuating with choice of tree prior. The tree prior choice is not relevant in terms of AICM but makes difference in median ages of the family. The consensus tree inferred in my analysis is **closer to the tree found in Dravidian comparative literature** than the published tree. Moreover, none of my trees show support for three calibration points posited by the authors which relate to the terminal taxa (Brahui, Telugu, Kannada-Tulu).
+In a previous blog post [1](https://ktrama.github.io/DravAgeRange/) I experimented and found that there is not much signal in the lexical data to infer the right tree and that the root age keeps fluctuating with choice of tree prior. The tree prior choice is not relevant in terms of AICM but makes difference in median ages of the family. The consensus tree inferred in my analysis is **closer to the tree found in Dravidian comparative literature** than the published tree. Moreover, none of the inferred trees in [1](https://ktrama.github.io/DravAgeRange/) show support for three calibration points posited by the authors which relate to the terminal taxa (Brahui, Telugu, Kannada-Tulu).
 
 I performed a non-dating study in post [2](https://ktrama.github.io/DravGQD/) where I tested if the tree inferred from lexical cognates is as good as gold standard tree by not performing any dating. In other words, I only verified the accuracy of the topology of the inferred trees. I will do the opposite in this post. I will not infer topology but fix the topology and infer ages on the topology.
 
