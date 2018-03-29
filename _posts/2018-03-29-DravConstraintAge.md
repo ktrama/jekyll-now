@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A one calibration point can increase the root age of a family.
+title: Can a single calibration point increase the root age of a family?
 categories: Dravidian
 tags: [BI]
 ---
