@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Is one calibration point enough to push the root age of a family?
+title: A one calibration point can increase the root age of a family.
 categories: Dravidian
 tags: [BI]
 ---
@@ -57,4 +57,4 @@ the calibration information to the most recent common ancestor of some named ter
 is topological uncertainty, however, this results in the calibration information floating around in the tree in a
 manner that is unlikely to reflect the uncertainty in the placement of the calibration fossil.
 ```
-Is there any explanation for the observation regarding the large shift in ages? I think that the amount of change in cognates does not correlate with the time passed since the first attestation of Tamil inscription. In other words, **there is not enough change in lexical cognates to support the calibration point independently**.
+Is there any explanation for the observation regarding the large shift in ages? I think that the amount of change in cognates does not correlate with the time passed since the first attestation of Tamil inscription. In other words, **there is not enough change in lexical cognates to support the calibration point independently.**
