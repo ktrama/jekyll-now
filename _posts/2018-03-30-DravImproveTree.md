@@ -13,7 +13,7 @@ Moreover, the inference also lowers the upper boundary of the HPD interval of th
 
 ## Quality of the inferred trees
 
-In a previous post, I used different tree priors to infer trees.  I evaluated those inferred trees against gold standard and report the Generalized Quartet Distances (GQD) below. Note that these results are only with cognate sets.
+In a previous post, I used different tree priors to infer trees.  I evaluated those inferred trees against gold standard and report the Generalized Quartet Distances (GQD) below. Note that these results are only with cognate sets. I only reported the GQD value for Birth-Death trees since I perform experiments with Birth-Death tree. Moreover, the scores for coalescent and uniform trees are very similar the numbers reported below.
 
 Tree| GQD| No. of Trees
 ---|---|---
