@@ -51,7 +51,7 @@ I compare the majority consensus tree with gold standard tree (Glottolog tree) a
 * Betta-Kurumba comes out along with Kodagu as given by Krishnamurti
 * Kannada comes out right after Tulu.
 
-All the major splits have high posterior probabilities.
+All the major splits occur with high probabilities in the posterior sample.
 
 ### Shortcomings
 * Badaga, Kannada, Yeruva comes out seprately in the tree and not together which causes the South Dravidian I group to be not in agreement with Glottolog tree.
