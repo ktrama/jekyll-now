@@ -40,7 +40,7 @@ I evaluated the posterior sample of trees using GQD. The average GQD decreashe e
 
 The median root age is 3700 years with 95% HPD interval ranging from 2446 years to 5346 years whereas the authors of the paper report a age range of 3000-6500 years.
 
-I will now describe how the subgrouping quality improved over both the published tree and the birth death tree I reported [previously](https://github.com/PhyloStar/dravidian-dating/blob/master/mpi_20_langs/dravBirthdeath.con.tre.png).
+I will now describe how the subgrouping quality improved over both the published tree and the birth death tree I reported [previously](https://github.com/ktrama/ktrama.github.io/blob/master/_files/dravBirthdeath.con.tre.pdf).
 
 ### Comparison
 I compare the majority consensus tree with gold standard tree (Glottolog tree) and find the following improvements.
