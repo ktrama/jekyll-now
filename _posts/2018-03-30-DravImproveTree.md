@@ -5,7 +5,7 @@ categories: Dravidian
 tags: [BI]
 ---
 
-In this post, I will focus on improving the inferred Dravidian tree. Until now, the binary characters are modeling on loss or gain of cognates. In terms of historical linguistics, loss or gain of cognates is **lexical replacement** whereas, historical linguists also consider phonological divergence within cognate words. For instance, within cognates, sound change is an important aspect that can be used in calculating likelihood of a tree. Moreover, this step would increase the amount of information used to estimate the likelihood of a tree. I will use a method introduced by Gerhard Jäger in his [Global-scale phylogenetic linguistic inference from lexical resources](https://arxiv.org/pdf/1802.06079.pdf) paper.
+In this post, I will focus on improving the inferred Dravidian tree. Until now, Dravidian trees are inferred using binary characters that model loss or gain of cognates. In terms of historical linguistics, loss or gain of cognates is **lexical replacement** whereas, historical linguists also consider phonological divergence within cognate words. For instance, within cognates, sound change is an important aspect that can be used to calculate likelihood of the tree. Moreover, this step would use all the available information in a wordlist to estimate the likelihood of a tree. I will use a method introduced by Gerhard Jäger in his [Global-scale phylogenetic linguistic inference from lexical resources](https://arxiv.org/pdf/1802.06079.pdf) paper.
 
 ## Quality of the inferred trees
 
