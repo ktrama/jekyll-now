@@ -13,7 +13,7 @@ In a previous post, I used different tree priors to infer trees.  I evaluated th
 
 Tree| GQD| No. of Trees
 ---|---|---
-Coalescent| 0.2645 ± 0.0247 | 5001
+[//]: <> (Coalescent| 0.2645 ± 0.0247 | 5001)
 Birth-Death| 0.2685± 0.0275| 10001
 Uniform|  0.2719± 0.0271| 10001
 
