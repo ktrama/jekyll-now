@@ -13,9 +13,7 @@ In a previous post, I used different tree priors to infer trees.  I evaluated th
 
 Tree| GQD| No. of Trees
 ---|---|---
-[//]: <> (Coalescent| 0.2645 ± 0.0247 | 5001)
 Birth-Death| 0.2685± 0.0275| 10001
-Uniform|  0.2719± 0.0271| 10001
 
 As mentioned previously, the quartet distances are quite high and not within the observed range of Indo-European or Austronesian. How to improve the quality? One way is to add sound change information such that the inferred tree quality improves.
 
@@ -30,7 +28,32 @@ The Old English word for **dog** was *hund*, i.e., `hund` in ASJP transcription.
 
 ##  Results
 
-This step yields an extra 1798 characters that I will analyze as a separate partition. Therefore, I have two partitions, one partition is made up of cognates and the other partition is made up of characters that model sound change. I employed a birth-death tree prior and four-category discrete gamma distribution to weight the sites within each partition. I use a F81 model within each partition. As before, I ran two independent MCMC runs for 5 million iterations and summarized a run using majority consensus  tree. The result is here:
+This step yields an extra 1798 characters that I will analyze as a separate partition. Therefore, I have two partitions, one partition is made up of cognates and the other partition is made up of characters that model sound change. I employed a birth-death tree prior and four-category discrete gamma distribution to weight the sites within each partition. I use a F81 model of substitution within each partition. As before, I ran two independent MCMC runs for 5 million iterations and summarized a run using majority consensus tree. The result is here:
 
 [tree](https://github.com/ktrama/ktrama.github.io/blob/master/_files/dravPartition.con.tre.pdf)
+
+I evaluated the posterior sample of trees using GQD. The average GQD decreashe es to **0.2154±0.0199** which is about 19.77% improvement over the birth death tree that is inferred only with cognate classes.
+
+The median root age is 3700 years with 95% HPD interval ranging from 2446 years to 5346 years whereas the authors of the paper report a age range of 3000-6500 years.
+
+I will now describe how the subgrouping quality improved over both the published tree and the birth death tree I reported [previously](https://github.com/PhyloStar/dravidian-dating/blob/master/mpi_20_langs/dravBirthdeath.con.tre.png).
+
+### Comparison
+I compare the majority consensus tree with gold standard tree (Glottolog tree) and find the following improvements.
+
+* North Dravidian subgroup is the first to split off.
+* Gondi-Koya come out as siblings which never comes out right.
+* South Dravidian II group comes up right agreeing with the gold standard tree.
+* Betta-Kurumba comes out along with Kodagu as given by Krishnamurti
+* Kannada comes out right after Tulu.
+
+All the major splits have high posterior probabilities.
+
+### Shortcomings
+* Badaga, Kannada, Yeruva comes out seprately in the tree and not together which causes the South Dravidian I group to be not in agreement with Glottolog tree.
+* Kolami does not come out together with the Central group
+
+The tree I posted here is much better than the published tree and comes out closer to the glottolog tree.
+
+
 
