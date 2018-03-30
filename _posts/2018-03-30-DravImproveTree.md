@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sound change characters can improve quality of inferred trees
+title: Sound change characters can improve quality of Dravidian trees
 categories: Dravidian
 tags: [BI]
 ---
