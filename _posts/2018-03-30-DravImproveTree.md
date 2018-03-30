@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Can we improve the quality of inferred Dravidian tree?
+title: How to improve the quality of inferred Dravidian tree?
 categories: Dravidian
 tags: [BI]
 ---
