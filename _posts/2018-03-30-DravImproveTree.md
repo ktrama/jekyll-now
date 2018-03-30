@@ -9,7 +9,7 @@ In this post, I will focus on improving the inferred Dravidian tree. Until now, 
 
 Performing inference with sound change information improves both the quality of the tree by 20% in terms of GQD. Qualitatively, except for a single group of languages, the tree shows the North Dravidian split clearly and also shows South-Dravidian I and II together and also Central group (without Kolami) as a separate group. The hallmark of the tree is that it agrees largely in many aspects with both Krishnamurti and Glottolog. Moreover, the branches are present in more than 50% of the 7500 trees inferred in both the runs. 
 
-Moreover, the inference also lowers the upper boundary of the HPD interval of the root age.
+Moreover, the inference also lowers the upper boundary of the HPD interval of the root age and places the median root age at 3700 years.
 
 ## Quality of the inferred trees
 
@@ -59,5 +59,7 @@ All the major splits have high posterior probabilities.
 
 The tree I posted here is much better than the published tree and comes out closer to the glottolog tree.
 
+### Outlook
 
+I could have constrained Central group also. However, I did not choose to do so since, I am interested in following Kolipakam et al. as closely as possible. I do not know of any reason why the authors did not constrain Central Dravidian. In any case, if I constrained the whole tree then the root age changes very much dependending on the oldest calibration point.
 
