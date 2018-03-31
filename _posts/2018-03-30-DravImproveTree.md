@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sound change characters can improve quality of Dravidian trees
+title: Sound change characters improves the quality of Dravidian trees
 categories: Dravidian
 tags: [BI]
 ---
