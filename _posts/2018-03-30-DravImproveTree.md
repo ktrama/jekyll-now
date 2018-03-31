@@ -36,7 +36,7 @@ This step yields an extra 1798 characters that I will analyze as a separate part
 
 [tree](https://github.com/ktrama/ktrama.github.io/blob/master/_files/dravPartition.con.tre.pdf)
 
-I evaluated the posterior sample of trees using GQD. The average GQD decreashe es to **0.2154±0.0199** which is about 19.77% improvement over the birth death tree that is inferred only with cognate classes.
+I evaluated the posterior sample of trees using GQD. The average GQD decreases to **0.2154±0.0199** which is about 19.77% improvement over the birth death tree that is inferred only with cognate classes.
 
 The median root age is 3700 years with 95% HPD interval ranging from 2446 years to 5346 years whereas the authors of the paper report a age range of 3000-6500 years.
 
